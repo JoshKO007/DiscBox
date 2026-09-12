@@ -1,0 +1,28 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Crear ficha · DiscBox</title><style>
+*{box-sizing:border-box}body{margin:0;background:#142219;color:#efe9d8;font:16px system-ui,sans-serif}main{max-width:1020px;margin:50px auto;padding:0 24px 50px}h1{font-size:42px;letter-spacing:-1.5px;margin-bottom:10px}p{line-height:1.6;color:#b8c8b0}.tag{letter-spacing:3px;font-size:12px;color:#e0c28c}form{background:#203427;border:1px solid #485d3f;border-radius:20px;padding:28px;margin-top:25px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}label{display:block;font-size:14px;color:#d5dfc9}input,textarea{display:block;width:100%;border:1px solid #586849;border-radius:8px;padding:12px;margin-top:7px;background:#132219;color:#f1ead4;font:16px system-ui}input:focus,textarea:focus{outline:2px solid #ddbd85}textarea{min-height:105px;resize:vertical}.wide{grid-column:1/-1}button{margin-top:23px;border:0;border-radius:9px;padding:15px 24px;font:600 16px system-ui;background:#e1c18a;color:#15291a;cursor:pointer}#result{display:none}#xml{height:380px;font:14px monospace}#status{color:#ebce95}.note{font-size:14px}a{color:#e1c18a}@media(max-width:650px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style></head><body><main><div class="tag">DISCBOX · TU CINE, A TU MANERA</div><h1>Una buena película merece su ficha.</h1><p>Llena lo que quieras mostrar en la televisión. Descarga el XML y colócalo en <strong>DiscBox/Detalles</strong> del disco. Este formulario funciona localmente, sin enviar tus datos.</p>
+<form id="form"><div class="grid">
+<label>Nombre exacto de la carpeta de la película *<input id="folder" required placeholder="El Graduado"></label><label>Título que se mostrará (opcional)<input id="title" placeholder="Se usará el nombre de la carpeta"></label>
+<label>Título original<input id="original"></label><label>Año<input id="year" type="number" min="1800" max="2300"></label>
+<label>Duración en minutos<input id="runtime" type="number" min="1" max="3000"></label><label>Géneros separados por comas<input id="genres" placeholder="Drama, Comedia"></label>
+<label>Dirección<input id="director"></label><label>País<input id="country"></label>
+<label>Clasificación<input id="rating" placeholder="B, B15, PG-13…"></label><label>Frase o lema<input id="tagline" maxlength="240"></label>
+<label class="wide">Sinopsis<textarea id="plot" maxlength="12000"></textarea></label><label class="wide">Reparto: un nombre por línea<textarea id="cast"></textarea></label>
+</div><button type="submit">Crear y descargar XML</button><p id="status" role="status"></p></form>
+<section id="result"><h2>Tu archivo</h2><p id="destination"></p><textarea id="xml" readonly aria-label="Contenido XML"></textarea><p class="note">También puedes copiar este texto en un archivo .xml guardado como UTF-8. Para corregirlo, cambia el formulario y descarga de nuevo.</p></section>
+<p class="note">Ejemplo de conexión: <strong>MP4/El Graduado/es.mp4</strong> + <strong>Covers/El Graduado.jpg</strong> + <strong>Detalles/El Graduado.xml</strong>. Los subtítulos van en <strong>Subtitulos/El Graduado/</strong>. Todo dentro de DiscBox.</p>
+</main><script>
+'use strict';
+document.getElementById('form').addEventListener('submit',function(event){
+event.preventDefault();var get=function(id){return document.getElementById(id).value.trim();};var folder=get('folder');
+if(!folder||/[\\/:*?"<>|\x00-\x1f]/.test(folder)||folder==='.'||folder==='..'){document.getElementById('status').textContent='Usa un nombre de carpeta sin barras ni caracteres especiales de archivo.';return;}
+var doc=document.implementation.createDocument('','pelicula',null),root=doc.documentElement;
+function add(tag,value,parent){if(!value)return;var el=doc.createElement(tag);el.textContent=value;(parent||root).appendChild(el);return el;}
+add('titulo',get('title')||folder);[['tituloOriginal','original'],['anio','year'],['duracion','runtime'],['director','director'],['pais','country'],['clasificacion','rating'],['frase','tagline'],['sinopsis','plot']].forEach(function(pair){add(pair[0],get(pair[1]));});
+get('genres').split(',').map(function(t){return t.trim();}).filter(Boolean).forEach(function(t){add('genero',t);});
+var cast=get('cast').split(/\n/).map(function(t){return t.trim();}).filter(Boolean);if(cast.length){var group=doc.createElement('reparto');root.appendChild(group);cast.forEach(function(t){add('actor',t,group);});}
+var xml='<?xml version="1.0" encoding="UTF-8"?>\n'+new XMLSerializer().serializeToString(doc).replace(/></g,'>\n<')+'\n';
+document.getElementById('xml').value=xml;document.getElementById('result').style.display='block';document.getElementById('destination').textContent='Guárdalo como DiscBox/Detalles/'+folder+'.xml';
+var url=URL.createObjectURL(new Blob([xml],{type:'application/xml;charset=utf-8'})),link=document.createElement('a');link.href=url;link.download=folder+'.xml';document.body.appendChild(link);link.click();link.remove();setTimeout(function(){URL.revokeObjectURL(url);},10000);document.getElementById('status').textContent='Ficha generada. Copia el archivo descargado a la carpeta Detalles del disco.';
+});
+</script></body></html>

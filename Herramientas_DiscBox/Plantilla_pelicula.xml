@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Renombra este archivo igual que la carpeta: Mi película.xml -->
+<pelicula>
+  <titulo>Mi película</titulo>
+  <tituloOriginal>Original title</tituloOriginal>
+  <anio>2026</anio>
+  <duracion>120</duracion>
+  <genero>Drama</genero>
+  <genero>Aventura</genero>
+  <frase>Una frase para presentar la película.</frase>
+  <sinopsis>Escribe aquí la sinopsis. Para escribir un ampersand usa &amp;amp; en el archivo XML.</sinopsis>
+  <director>Nombre de quien dirige</director>
+  <reparto><actor>Primer nombre</actor><actor>Segundo nombre</actor></reparto>
+  <pais>México</pais>
+  <clasificacion>B</clasificacion>
+  <!-- Opcional: nombres personalizados para los archivos de idioma -->
+  <audios>
+    <audio archivo="es.mp4" idioma="es-MX" nombre="Español latino"/>
+    <audio archivo="en.mp4" idioma="en" nombre="English"/>
+  </audios>
+  <subtitulos>
+    <subtitulo archivo="es.srt" idioma="es" nombre="Español"/>
+    <subtitulo archivo="en.vtt" idioma="en" nombre="English"/>
+    <!-- video restringe un subtítulo al MP4 de esa edición, si lo necesitas:
+    <subtitulo archivo="es-extendida.srt" nombre="Español · extendida" video="es-extendida.mp4"/>
+    -->
+  </subtitulos>
+  <!-- Opcional: capítulos reales con tiempos de esa película -->
+  <capitulos>
+    <capitulo tiempo="00:00:00" titulo="Inicio"/>
+    <capitulo tiempo="00:10:00" titulo="Segundo capítulo"/>
+  </capitulos>
+</pelicula>

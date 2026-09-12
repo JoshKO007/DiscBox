@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pelicula>
+  <titulo>Prueba DiscBox</titulo>
+  <tituloOriginal>DiscBox playback test</tituloOriginal>
+  <anio>2026</anio><duracion>1</duracion><genero>Prueba</genero>
+  <frase>Un nuevo comienzo para tu cine en casa.</frase>
+  <sinopsis>Clip original de 60 segundos para verificar imagen en movimiento, sonido, cambio de archivo y subtítulos. Incluye un tono de prueba, sin voces. No es una película comercial.</sinopsis>
+  <director>JoshKo007 · DiscBox</director>
+  <audios><audio archivo="es.mp4" nombre="Español · prueba"/><audio archivo="en.mp4" nombre="English · test"/></audios>
+  <subtitulos><subtitulo archivo="es.srt" nombre="Español"/><subtitulo archivo="en.srt" nombre="English"/></subtitulos>
+  <capitulos><capitulo tiempo="00:00:00" titulo="Inicio"/><capitulo tiempo="00:00:30" titulo="Segunda mitad"/></capitulos>
+</pelicula>

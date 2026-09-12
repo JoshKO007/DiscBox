@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:04,800
+Prueba de subtítulos en español · 0 segundos
+
+2
+00:00:05,000 --> 00:00:09,800
+Prueba de subtítulos en español · 5 segundos
+
+3
+00:00:10,000 --> 00:00:14,800
+Prueba de subtítulos en español · 10 segundos
+
+4
+00:00:15,000 --> 00:00:19,800
+Prueba de subtítulos en español · 15 segundos
+
+5
+00:00:20,000 --> 00:00:24,800
+Prueba de subtítulos en español · 20 segundos
+
+6
+00:00:25,000 --> 00:00:29,800
+Prueba de subtítulos en español · 25 segundos
+
+7
+00:00:30,000 --> 00:00:34,800
+Prueba de subtítulos en español · 30 segundos
+
+8
+00:00:35,000 --> 00:00:39,800
+Prueba de subtítulos en español · 35 segundos
+
+9
+00:00:40,000 --> 00:00:44,800
+Prueba de subtítulos en español · 40 segundos
+
+10
+00:00:45,000 --> 00:00:49,800
+Prueba de subtítulos en español · 45 segundos
+
+11
+00:00:50,000 --> 00:00:54,800
+Prueba de subtítulos en español · 50 segundos
+
+12
+00:00:55,000 --> 00:00:59,800
+Prueba de subtítulos en español · 55 segundos

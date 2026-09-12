@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:04,800
+English subtitle test · 0 seconds
+
+2
+00:00:05,000 --> 00:00:09,800
+English subtitle test · 5 seconds
+
+3
+00:00:10,000 --> 00:00:14,800
+English subtitle test · 10 seconds
+
+4
+00:00:15,000 --> 00:00:19,800
+English subtitle test · 15 seconds
+
+5
+00:00:20,000 --> 00:00:24,800
+English subtitle test · 20 seconds
+
+6
+00:00:25,000 --> 00:00:29,800
+English subtitle test · 25 seconds
+
+7
+00:00:30,000 --> 00:00:34,800
+English subtitle test · 30 seconds
+
+8
+00:00:35,000 --> 00:00:39,800
+English subtitle test · 35 seconds
+
+9
+00:00:40,000 --> 00:00:44,800
+English subtitle test · 40 seconds
+
+10
+00:00:45,000 --> 00:00:49,800
+English subtitle test · 45 seconds
+
+11
+00:00:50,000 --> 00:00:54,800
+English subtitle test · 50 seconds
+
+12
+00:00:55,000 --> 00:00:59,800
+English subtitle test · 55 seconds
